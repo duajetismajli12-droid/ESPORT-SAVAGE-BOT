@@ -1,3 +1,17 @@
+const http = require('http');
+
+// Create a minimal HTTP server to satisfy Render's health checks
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot environment active.\n');
+});
+
+// Bind to the port provided by Render, falling back to 3000 locally
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`📡 Port-binding server listening on port ${PORT}`);
+});
+
 require('dotenv').config();
 const { 
     Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, 
