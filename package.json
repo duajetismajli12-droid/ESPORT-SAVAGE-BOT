@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "discord.js": "^14.26.4",
+    "dotenv": "^17.4.2",
+    "edit-json-file": "^1.8.1",
+    "tesseract.js": "^7.0.0"
+  }
+}
